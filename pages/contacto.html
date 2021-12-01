@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quien se ha tomado todo el vino</title>
+    <meta name="description" content="Blog de vinos" />
+    <meta name="keywords" content="vino, bebidas, alcohol,amigos" />
+    <meta
+      name="author"
+      content=" Luciana Medina, Lourdes Kasznar,Ignacio Vargas, Nicolas Cortez Delia, Luciana Hidalgo, Bautista Japaze "
+    />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/85f80dca4b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <nav
+        class="
+          navbar navbar-expand-lg
+          navcolor
+          navbar-dark
+          navfijo
+          container-fluid
+        "
+      >
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="/img/LogoBlogVinos.png"
+              alt="Logo de quien se ha tomado el vino"
+              width="150"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarVino"
+            aria-controls="navbarVino"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <section class="flex-row-reverse">
+            <div class="collapse navbar-collapse" id="navbarVino">
+              <ul class="navbar-nav me-auto mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="/pages/contacto.html"
+                    >Contacto</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/pages/nosotros.html"
+                    >Acerca de Nosotros</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/pages/Galeria.html">Galería</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="#"
+                    class="nav-link"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalSuscribe"
+                  >
+                    <p>Suscribite</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pages/Login.html">
+                    <i class="far fa-user"></i> Iniciar Sesión</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="slider">
+        <h1 class="display-2 colorfondos text-center text-white p-4">
+          Contacto
+        </h1>
+
+        <article class="container p-4">
+          <article class="row col-12">
+            <div class="col-sm-12 col-md-6">
+              <form>
+                <div class="mb-3">
+                  <label for="" class="form-label">Nombre y Apellido</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombreApellido"
+                    required
+                    minlength="8"
+                    maxlength="50"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    required
+                    maxlength="40"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="consulta" class="form-label">Consulta</label>
+                  <textarea
+                    id="consulta"
+                    rows="4"
+                    class="form-control"
+                    minlength="10"
+                    maxlength="259"
+                    required
+                  >
+                  </textarea>
+                </div>
+                <button class="btn-primary" type="submit">Enviar</button>
+              </form>
+            </div>
+            <div class="col-sm-12 col-md-6 marginMapa">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.964869580201!2d-68.86017968525563!3d-32.89909707681188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0909d9c80c55%3A0x26a3317da15e97f7!2sGranaderos%20121%2C%20M5502BLN%20Mendoza!5e0!3m2!1ses-419!2sar!4v1630971177559!5m2!1ses-419!2sar"
+                class="w-100"
+                height="370"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </article>
+        </article>
+      </section>
+    </main>
+    <div
+      class="modal fade"
+      id="modalSuscribe"
+      tabindex="-1"
+      aria-labelledby="tituloModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title text-center display-6" id="tituloModal">
+              Suscribite a Nuestro Newsletter
+            </h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <p class="mt-2">
+              Ingresá tu E-mail. Luego, presioná el botón
+              <span class="fw-bold">ENVIAR</span>. Recibirás semanalmente la
+              mejor info sobre vinos
+            </p>
+            <form>
+              <input
+                type="email"
+                class="form-control"
+                id="EMail"
+                placeholder="juanperez@gmail.com"
+                required
+                maxlength="30"
+                minlength="5"
+              />
+              <label for="EMail"></label>
+              <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-light py-5 padding-footer">
+      <article class="row w-100 article-margin">
+        <div class="col-sm-12 col-md-4 footer-responsive text-center">
+          <img
+            src="/img/LogoBlogVinos.png"
+            class="logoFooter"
+            alt="Logo Quien se ha tomado todo el Vino"
+          />
+        </div>
+
+        <div class="col-sm-12 col-md-4 text-center">
+          <p class="fw-bold">¡Sumate a Nuestra Comunidad!</p>
+          <p>Contactanos a través de nuestro e-mail</p>
+          <p class="fw-bold">info@quiensehatomadoelvino.com</p>
+        </div>
+
+        <div class="col-sm-12 col-md-4 text-center">
+          <p class="fw-bold">Seguinos en nuestras redes:</p>
+          <i class="fab fa-2x p-1 fa-facebook-square"></i>
+          <i class="fab fa-2x p-1 fa-twitter-square"></i>
+          <i class="fab fa-2x p-1 fa-instagram-square"></i>
+        </div>
+      </article>
+
+      <article class="text-center mt-2">
+        <p>&copy; Todos los derechos de reservados</p>
+      </article>
+    </footer>
+
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
