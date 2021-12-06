@@ -1,8 +1,12 @@
 // creo la funcion para que cada vez que se cargue la pagina se genere un numero aleatorio unico en el input del codigo
-window.onload = main;
-function main(){
-    let campoCodigo = document.querySelector("#codigo");
-    campoCodigo.value = Math.floor(Math.random() * 1000);
+// window.onload = main;
+// function main(){
+//     let campoCodigo = document.querySelector("#codigo");
+//     campoCodigo.value = Math.floor(Math.random() * 1000);
+// }
+
+export function codigoUnico(input){
+    input.value = Math.floor(Math.random() * 1000);
 }
 
 export function campoRequerido(input){
@@ -47,8 +51,7 @@ export function ValidarURL(input){
     }
 }
 
-export function ValidarGeneral(e){
-    e.preventDefault();
+export function ValidarGeneral(campoProducto, campoDescripcion, campoURL, campoPrecio){
     let alerta = document.querySelector("#msjAlerta");
     if(campoRequerido(campoProducto) &&
     campoRequeridoDescripcion(campoDescripcion) && 
@@ -56,8 +59,10 @@ export function ValidarGeneral(e){
     ValidarNumeros(campoPrecio)){
         console.log("si paso la validacion");
         alerta.className = "alert alert-danger my-3 d-none";
+        return true;
     }else{
         console.log("no paso la validacion")
         alerta.className = "alert alert-danger my-3";
+        return false;
     }
 }

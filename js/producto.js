@@ -1,4 +1,4 @@
-class Producto{
+export class Producto{
     constructor(campoCodigo, campoProducto, campoDescripcion, CampoURL, campoPrecio){
         this.codigo = campoCodigo;
         this.producto = campoProducto;
