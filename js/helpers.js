@@ -19,16 +19,6 @@ export function campoRequerido(input){
     }
 }
 
-export function campoRequeridoDescripcion(input){
-    if(input.value.trim().length > 5){
-        input.className = "form-control is-valid";
-        return true;
-    }else{
-        input.className = "form-control is-invalid";
-        return false;
-    }
-}
-
 export function ValidarNumeros(input){
     let patron = /^[0-9]{1,8}$/;
     if(patron.test(input.value)){
@@ -51,10 +41,10 @@ export function ValidarURL(input){
     }
 }
 
-export function ValidarGeneral(campoProducto, campoDescripcion, campoURL, campoPrecio){
+export function ValidarGeneral(campoCodigo,campoProducto, campoDescripcion, campoURL, campoPrecio){
     let alerta = document.querySelector("#msjAlerta");
-    if(campoRequerido(campoProducto) &&
-    campoRequeridoDescripcion(campoDescripcion) && 
+    if(campoRequerido(campoCodigo) && campoRequerido(campoProducto) &&
+    campoRequerido(campoDescripcion) && 
     ValidarURL(campoURL) && 
     ValidarNumeros(campoPrecio)){
         console.log("si paso la validacion");
@@ -64,5 +54,14 @@ export function ValidarGeneral(campoProducto, campoDescripcion, campoURL, campoP
         console.log("no paso la validacion")
         alerta.className = "alert alert-danger my-3";
         return false;
+    }
+}
+
+export function ValidarEmail(){
+     let patron = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    if(patron.test(input.value)){
+        return true;
+     }else{
+         return false;
     }
 }

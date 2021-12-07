@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--aqui agrego las etiquetas meta-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Vinilos</title>
 </head>
 <body>
@@ -45,8 +46,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="descripcion" class="form-label">Descripcion</label>
-                    <textarea  id="descripcion"  rows="3" class="form-control" minlength="5" maxlength="300"   placeholder="agrege la descripcion de su producto"></textarea>
-                    <div class="invalid-feedback">debe agregar al menos 5 caracteres</div>
+                    <textarea  id="descripcion"  rows="3" class="form-control" minlength="1" maxlength="300"   placeholder="agrege la descripcion de su producto"></textarea>
+                    <div class="invalid-feedback">debe agregar al menos un caracter</div>
                 </div>
                   <div class="mb-3">
                       <label for="url" class="form-label">URL</label>

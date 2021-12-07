@@ -36,3 +36,11 @@ export class Producto{
         this.precio = nuevaPrecio;
     }
 }
+
+export class Consulta{
+    constructor(campoNombre, campoMail, campoConsulta){
+        this.nombre = campoNombre;
+        this.mail = campoMail;
+        this.Consulta = campoConsulta;
+    }
+}
