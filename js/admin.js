@@ -76,7 +76,7 @@ function crearFila(productoNuevo){
     <td>${productoNuevo.url}</td>
     <td>${"$" + productoNuevo.precio}</td>
     <td>
-    <button type="button" class="btn btn-danger">Editar</button>
+    <button type="button" class="btn btn-danger" onclick="prepararEdicionProducto(${productoNuevo.codigo})">Editar</button>
     <button type="button" class="btn btn-warning">Borrar</button>
 </td>`;
 }
@@ -92,4 +92,17 @@ function cargaInicial(){
 function borrarTabla(){
     let tabla = document.querySelector("#tablaProductos");
     tabla.innerHTML = "";
+}
+
+window.prepararEdicionProducto = function (codigo) {
+    console.log(codigo);
+    //obtener el objeto a modificar
+    let productoBuscado = listaProductos.find((itemProducto)=>{ return itemProducto.codigo == codigo});
+    console.log(productoBuscado);
+    //mostrar los datos en el formulario
+    campoCodigo.value = productoBuscado.codigo;
+    campoProducto.value = productoBuscado.producto;
+    campoDescripcion.value = productoBuscado.descripcion;
+    campoURL.value = productoBuscado.url;
+    campoPrecio.value = productoBuscado.precio;
 }
