@@ -10,7 +10,9 @@ let campoPrecio = document.querySelector("#precio");
 let formularioProductos = document.querySelector("#formProductos");
 //lista de productos
 let listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
-let listaConsulta = [];
+let productoExistente = false; //si producto existente es igual a false quiero crear un nuevo producto, caso contrario quiero modificar
+let botonNuevo = document.querySelector("#botonNuevo");
+let listaConsulta = []; //variable axelcampos
 
 campoCodigo.addEventListener("click", function(){codigoUnico(campoCodigo)});
 campoCodigo.addEventListener("blur", function(){campoRequerido(campoCodigo)});
@@ -19,6 +21,7 @@ campoDescripcion.addEventListener("blur", ()=>{campoRequerido(campoDescripcion)}
 campoURL.addEventListener("blur", ()=>{ValidarURL(campoURL)});
 campoPrecio.addEventListener("blur", ()=>{ValidarNumeros(campoPrecio)});
 formularioProductos.addEventListener("submit", guardarProducto);
+botonNuevo.addEventListener("click",limpiarFormulario);
 //aqui agrego los input de axelcampos
 
 //llamar a la funcion carga inicial
@@ -27,8 +30,13 @@ cargaInicial();
 function guardarProducto(e){
     e.preventDefault();
     if(ValidarGeneral(campoCodigo,campoProducto,campoDescripcion,campoURL,campoPrecio)){
-        //crear producto
-        crearProducto();
+        if(productoExistente == false){
+            //caso 1: el usuario quiere crear un producto
+            crearProducto();
+        }else{
+            //caso 2: el usuario quiere editar un producto
+            modificarProducto();
+        }
     }
 }
 
@@ -61,6 +69,8 @@ function limpiarFormulario(){
     campoDescripcion.className = "form-control";
     campoURL.className = "form-control";
     campoPrecio.className = "form-control";
+    //limpiar la variable booleana
+    productoExistente = false;
 }
 
 function guardarLocalstorage(){
@@ -77,7 +87,7 @@ function crearFila(productoNuevo){
     <td>${"$" + productoNuevo.precio}</td>
     <td>
     <button type="button" class="btn btn-danger" onclick="prepararEdicionProducto(${productoNuevo.codigo})">Editar</button>
-    <button type="button" class="btn btn-warning">Borrar</button>
+    <button type="button" class="btn btn-warning" onclick="borrarProducto(${productoNuevo.codigo})">Borrar</button>
 </td>`;
 }
 
@@ -95,14 +105,56 @@ function borrarTabla(){
 }
 
 window.prepararEdicionProducto = function (codigo) {
-    console.log(codigo);
     //obtener el objeto a modificar
-    let productoBuscado = listaProductos.find((itemProducto)=>{ return itemProducto.codigo == codigo});
-    console.log(productoBuscado);
+    let productoBuscado = listaProductos.find((itemProducto)=>{return itemProducto.codigo == codigo});
     //mostrar los datos en el formulario
     campoCodigo.value = productoBuscado.codigo;
     campoProducto.value = productoBuscado.producto;
     campoDescripcion.value = productoBuscado.descripcion;
     campoURL.value = productoBuscado.url;
     campoPrecio.value = productoBuscado.precio;
+    //aqui modifico la variable booleana que indica que estoy editando
+    productoExistente = true; 
+}
+
+function modificarProducto(){
+    // buscar la posicion de mi producto dentro del arreglo
+    let posicionProducto = listaProductos.findIndex((itemProducto)=>{ return itemProducto.codigo == campoCodigo.value});
+    // modificar los datos de ese producto dentro del arreglo
+    listaProductos[posicionProducto].producto = campoProducto.value; 
+    listaProductos[posicionProducto].descripcion = campoDescripcion.value;
+    listaProductos[posicionProducto].url = campoURL.value;
+    listaProductos[posicionProducto].precio = campoPrecio.value;
+    // actualizar datos dentro de localstorage
+    guardarLocalstorage();
+    //mostrar un cartel al usuario
+    Swal.fire(
+        'Producto modificado',
+        'Su producto fue modificado correctamente!',
+        'success'
+      )
+    //limpiar formulario
+    limpiarFormulario();
+    // actualizar tabla
+    borrarTabla();
+    // dibujar fila
+    listaProductos.forEach((itemProducto)=>{crearFila(itemProducto)});
+}
+
+window.borrarProducto = function(codigo){
+    console.log(codigo);
+    // borro el producto del arreglo
+    let arregloProductoBorrado = listaProductos.filter((itemProducto)=>{return itemProducto.codigo != codigo});
+    //actualizo los datos de locastorage
+    listaProductos = arregloProductoBorrado;
+    guardarLocalstorage();
+    // actualizar los datos de la tabla (borrar y volver a dibujar)
+    borrarTabla();
+    listaProductos.forEach((itemProducto)=>{crearFila(itemProducto)});
+      //mostrar un cartel al usuario
+      Swal.fire(
+        'Producto Eliminado',
+        'Su producto fue correctamente eliminado!',
+        'success'
+      )
 }
