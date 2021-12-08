@@ -1,5 +1,5 @@
 import {codigoUnico,campoRequerido, ValidarNumeros, ValidarURL, ValidarGeneral} from "./helpers.js"
-import {Producto} from "./producto.js"
+import {Producto, Consulta} from "./producto.js"
 
 //aqui agrego los eventos a los elementos del formulario
 let campoCodigo = document.querySelector("#codigo");
@@ -21,6 +21,8 @@ campoPrecio.addEventListener("blur", ()=>{ValidarNumeros(campoPrecio)});
 formularioProductos.addEventListener("submit", guardarProducto);
 //aqui agrego los input de axelcampos
 
+//llamar a la funcion carga inicial
+cargaInicial();
 
 function guardarProducto(e){
     e.preventDefault();
@@ -46,6 +48,8 @@ function crearProducto(){
         'Su producto fue creado correctamente!',
         'success'
       )
+      //crear fila
+      crearFila(productoNuevo);
 }
 
 function limpiarFormulario(){
@@ -61,4 +65,31 @@ function limpiarFormulario(){
 
 function guardarLocalstorage(){
     localStorage.setItem("listaProductosKey", JSON.stringify(listaProductos));
+}
+
+function crearFila(productoNuevo){
+    let tabla = document.querySelector("#tablaProductos");
+    tabla.innerHTML += `<tr>
+    <th scope="row">${productoNuevo.codigo}</th>
+    <td>${productoNuevo.producto}</td>
+    <td>${productoNuevo.descripcion}</td>
+    <td>${productoNuevo.url}</td>
+    <td>${"$" + productoNuevo.precio}</td>
+    <td>
+    <button type="button" class="btn btn-danger">Editar</button>
+    <button type="button" class="btn btn-warning">Borrar</button>
+</td>`;
+}
+
+function cargaInicial(){
+    // si hay datos en localstorage o listaProductos dibujo las filas
+    if(listaProductos.length > 0){
+        //dibujar fila
+        listaProductos.forEach((itemProducto)=>{crearFila(itemProducto)}) 
+    }
+}
+
+function borrarTabla(){
+    let tabla = document.querySelector("#tablaProductos");
+    tabla.innerHTML = "";
 }

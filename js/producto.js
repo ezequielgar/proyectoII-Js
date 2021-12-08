@@ -38,9 +38,29 @@ export class Producto{
 }
 
 export class Consulta{
-    constructor(campoNombre, campoMail, campoConsulta){
+    constructor(campoNombre, campoEmail, campoConsulta){
         this.nombre = campoNombre;
-        this.mail = campoMail;
+        this.email = campoEmail;
         this.Consulta = campoConsulta;
+    }
+
+    get mostrarNombre(){
+        return this.nombre;
+    }
+    get mostrarEmail(){
+        return this.email;
+    }
+    get mostrarConsulta(){
+        return this.Consulta;
+    }
+
+    set modificarNombre(nuevoNombre){
+        this.nombre = nuevoNombre;
+    }
+    set modificarEmail(nuevoEmail){
+        this.email = nuevoEmail;
+    }
+    set modificarConsulta(nuevaConsulta){
+        this.Consulta = nuevaConsulta;
     }
 }
