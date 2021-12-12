@@ -1,5 +1,14 @@
 export function codigoUnico(input){
-    input.value = Math.floor(Math.random() * 1000);
+    input.value = obtenerCodigo();
+}
+
+function obtenerCodigo(){
+    let listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+    let codigo = 0;
+    if(listaProductos.length > 0){
+        codigo = parseInt(listaProductos[listaProductos.length-1].codigo);
+    }
+    return codigo +1;
 }
 
 export function campoRequerido(input){
