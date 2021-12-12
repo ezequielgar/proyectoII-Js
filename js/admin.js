@@ -1,5 +1,5 @@
 import {codigoUnico,campoRequerido, ValidarNumeros, ValidarURL, ValidarGeneral} from "./helpers.js"
-import {Producto, Consulta} from "./producto.js"
+import {Producto} from "./producto.js"
 
 //aqui agrego los eventos a los elementos del formulario
 let campoCodigo = document.querySelector("#codigo");
@@ -12,7 +12,6 @@ let formularioProductos = document.querySelector("#formProductos");
 let listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
 let productoExistente = false; //si producto existente es igual a false quiero crear un nuevo producto, caso contrario quiero modificar
 let botonNuevo = document.querySelector("#botonNuevo");
-let listaConsulta = []; //variable axelcampos
 
 campoCodigo.addEventListener("click", function(){codigoUnico(campoCodigo)});
 campoCodigo.addEventListener("blur", function(){campoRequerido(campoCodigo)});
@@ -22,7 +21,7 @@ campoURL.addEventListener("blur", ()=>{ValidarURL(campoURL)});
 campoPrecio.addEventListener("blur", ()=>{ValidarNumeros(campoPrecio)});
 formularioProductos.addEventListener("submit", guardarProducto);
 botonNuevo.addEventListener("click",limpiarFormulario);
-//aqui agrego los input de axelcampos
+
 
 //llamar a la funcion carga inicial
 cargaInicial();

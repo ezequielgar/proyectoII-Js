@@ -1,17 +1,20 @@
-// creo la funcion para que cada vez que se cargue la pagina se genere un numero aleatorio unico en el input del codigo
-// window.onload = main;
-// function main(){
-//     let campoCodigo = document.querySelector("#codigo");
-//     campoCodigo.value = Math.floor(Math.random() * 1000);
-// }
-
 export function codigoUnico(input){
-    input.value = Math.floor(Math.random() * 1000);
+    input.value = obtenerCodigo();
+}
+
+function obtenerCodigo(){
+    let listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+    let codigo = 0;
+    if(listaProductos.length > 0){
+        codigo = parseInt(listaProductos[listaProductos.length-1].codigo);
+    }
+    return codigo +1;
 }
 
 export function campoRequerido(input){
     if(input.value.trim().length > 0){
         input.className = "form-control is-valid";
+        console.log("paso la validacion")
         return true;
     }else{
         input.className = "form-control is-invalid";
@@ -57,11 +60,23 @@ export function ValidarGeneral(campoCodigo,campoProducto, campoDescripcion, camp
     }
 }
 
-export function ValidarEmail(){
-     let patron = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-    if(patron.test(input.value)){
-        return true;
-     }else{
-         return false;
-    }
+export function ValidarGeneralConsulta(campoNombre,campoEmail, campoConsulta){
+   if(campoRequerido(campoNombre) && validarEmail(campoEmail) &&
+   campoRequerido(campoConsulta)){
+       console.log("si paso la validacion");
+       return true;
+   }else{
+       console.log("no paso la validacion")
+       return false;
+   }
 }
+ export function validarEmail(input){
+    let patron = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    if(patron.test(input.value)){
+        input.className = "form-control is-valid";
+        return true;
+    }else{
+        input.className = "form-control is-invalid";
+        return false;
+    }
+ }
