@@ -21,6 +21,12 @@ function crearCard(producto){
 
 }
 
+let inputBuscador = document.querySelector("#idBuscador");
+
+
+let formularioBuscador = document.getElementById("BuscarForm");
+formularioBuscador.addEventListener("submit",buscarProducto)
+
 function borrarCards(){
   
   grilla.innerHTML = " ";
