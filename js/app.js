@@ -21,3 +21,27 @@ function crearCard(producto){
 
 }
 
+function borrarCards(){
+  
+  grilla.innerHTML = " ";
+  console.log("se activa la función borrar cards")
+}
+
+
+
+function buscarProducto(e) {
+e.preventDefault();
+console.log("le saco el evento submit por defecto al botón buscar");
+
+borrarCards();
+
+listaProductos.filter((objetoProducto)=>{if(objetoProducto.codigo == idBuscador.value || objetoProducto.producto == idBuscador.value ){
+crearCard(objetoProducto);
+}})
+
+}
+
+
+
+
+
