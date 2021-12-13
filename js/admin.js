@@ -35,6 +35,7 @@ function guardarProducto(e){
         }else{
             //caso 2: el usuario quiere editar un producto
             modificarProducto();
+            campoCodigo.disabled = false;
         }
     }
 }
@@ -112,6 +113,7 @@ window.prepararEdicionProducto = function (codigo) {
     campoDescripcion.value = productoBuscado.descripcion;
     campoURL.value = productoBuscado.url;
     campoPrecio.value = productoBuscado.precio;
+    campoCodigo.disabled = true;
     //aqui modifico la variable booleana que indica que estoy editando
     productoExistente = true; 
 }

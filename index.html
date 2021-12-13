@@ -11,12 +11,13 @@
       content=" Luciana Medina,Ignacio Vargas,Ezequiel Nicolas Garcia, Pablo Romero Abadie, Axel Campo"
     />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://kit.fontawesome.com/85f80dca4b.js" crossorigin="anonymous"></script>
     <title>Pagina principal</title>
   </head>
   <body>
     <header>
-      <nav class=" navbar navbar-expand-lg navcolor navbar-light navfijo container-fluid">
+      <nav class=" bg-dark navbar-dark navbar navbar-expand-lg  navfijo container-fluid">
         <div class="container">
           <a class="navbar-brand" href="index.html">
             <img
@@ -49,16 +50,16 @@
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="">Administración</a>
+                  <a class="nav-link" href="/admin.html">Administración</a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/sobrenosotros.html"
+                  <a class="nav-link" href="/pages/sobrenosotros.html"
                     >Nosotros</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/nosotros.html">Contacto</a>
+                  <a class="nav-link" href="/pages/contacto.html">Contacto</a>
                 </li>
                 
               </ul>
@@ -69,7 +70,7 @@
     </header>
 
     <main >
-      <section class="container mt-4">
+      <section class="container mt-4 ">
          <article class="row container">
           
           <div class="col-sm-12 col-md-4 my-5 ps-5">
@@ -110,42 +111,15 @@
           />
          </a>
           </div>
+          <hr>
           </article>
 
-        <article class="row my-5 ps-5">
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <img src="" class="img-fluid" alt="vinilo" />
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <img src="" class="img-fluid" alt="vinilo" />
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <img src="" class="img-fluid" alt="vinilo" />
-          </div>
-        </article>
-        <article class="row my-5 ps-5">
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <img src="" class="img-fluid" alt="vinilo" />
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <img src="" class="img-fluid" alt="vinilo" />
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <img src="" class="img-fluid" alt="vinilo" />
-          </div>
-        </article>
-        <article class="row my-5 ps-5">
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <img src="" class="img-fluid" alt="vinilo" />
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <img src="" class="img-fluid" alt="vinilo" />
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <img src="" class="img-fluid" alt="vinilo" />
-          </div>
-        </article>
+          
+
+          <div class="row text-center" id="grillaPrincipal"></div>
+          <hr>
       </section>
+      
     </main>
 
     <footer class="bg-dark text-light py-5 padding-footer">
@@ -157,14 +131,20 @@
         <div class="col-sm-12 col-md-4 text-center">
           <p class="fw-bold">¡Sumate a Nuestra Comunidad!</p>
           <p>Contactanos a través de nuestro e-mail</p>
-          <p class="fw-bold">info@tusvinilos.com</p>
+          <p class="fw-bold">info@vintage.com</p>
         </div>
 
         <div class="col-sm-12 col-md-4 text-center">
           <p class="fw-bold">Seguinos en nuestras redes:</p>
-          <i class="fab fa-2x p-1 fa-facebook-square"></i>
-          <i class="fab fa-2x p-1 fa-twitter-square"></i>
-          <i class="fab fa-2x p-1 fa-instagram-square"></i>
+          <a href="/pages/error.html">
+          <i class="fab fa-2x p-1 fa-facebook-square link-secondary "></i>
+          </a>
+          <a href="/pages/error.html">
+          <i class="fab fa-2x p-1 fa-twitter-square link-secondary"></i>
+          </a>
+          <a href="/pages/error.html">
+          <i class="fab fa-2x p-1 fa-instagram-square link-secondary"></i>
+          </a>
         </div>
       </article>
 
@@ -174,5 +154,6 @@
     </footer>
 
     <script src="js/bootstrap.min.js"></script>
+    <script src="/js/app.js"></script>
   </body>
 </html>
