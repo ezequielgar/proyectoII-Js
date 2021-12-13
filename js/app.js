@@ -5,7 +5,7 @@ listaProductos.forEach((producto)=>{
 });
 function crearCard(producto){
     let grilla = document.getElementById('grillaPrincipal');
-    grilla.innerHTML += `<div class="col-sm-12 col-md-4 text-center ">
+    grilla.innerHTML += `<div class="col-sm-12 col-md-4 text-center my-3 ps-5">
 
     <div class="card" style="width: 18rem;">
         <img src="${producto.url}" class="card-img-top" alt="${producto.producto} ">
