@@ -23,7 +23,7 @@ formularioProductos.addEventListener("submit", guardarProducto);
 botonNuevo.addEventListener("click",limpiarFormulario);
 
 
-//llamar a la funcion carga inicial
+//llamar a la funcion carga inicial.
 cargaInicial();
 
 function guardarProducto(e){
