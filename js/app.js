@@ -11,21 +11,28 @@ btnBuscar.addEventListener("click", filtrar);
 
 function filtrar() {
   const cadena = campoFiltro.value.toLowerCase(); //Value del input texto lo paso a minusculas
-  const productos = JSON.parse(localStorage.getItem("listaProductosKey"));//obtengo los productos
+  const productos = JSON.parse(localStorage.getItem("listaProductosKey")); //obtengo los productos
   borrarCards(); //borro todas las cards
 
-  const productosMinus = productos.map((el) => { //pasar campos descripcion y producto a minusculas
+  const productosMinus = productos.map((el) => {
+    //pasar campos descripcion y producto a minusculas
     el.descripcion = el.descripcion.toLowerCase();
     el.producto = el.producto.toLowerCase();
     return el;
   });
-  
-  const productosFiltrados = productosMinus.filter((el) => { //filtramos los productos que contengan la cadena a buscar
-    if (el.codigo.includes(cadena) || el.descripcion.includes(cadena) || el.producto.includes(cadena)) {
+
+  const productosFiltrados = productosMinus.filter((el) => {
+    //filtramos los productos que contengan la cadena a buscar
+    if (
+      el.codigo.includes(cadena) ||
+      el.descripcion.includes(cadena) ||
+      el.producto.includes(cadena)
+    ) {
       return el;
     }
   });
-  for (let producto of productosFiltrados) { //Agregamos las cards a la pagina
+  for (let producto of productosFiltrados) {
+    //Agregamos las cards a la pagina
     crearCard(producto);
   }
 }
