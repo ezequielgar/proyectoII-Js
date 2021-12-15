@@ -14,62 +14,44 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/85f80dca4b.js" crossorigin="anonymous"></script>
-    <title>Pagina principal</title>
+    <title>Pagina Administracion</title>
   </head>
   <body>
     <header>
-      <nav class=" bg-dark navbar-dark navbar navbar-expand-lg  navfijo container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="index.html">
+          <a class="display-2 text-white" href="/index.html">
             <img
               src="img/vinilo_[Recuperado]_Mesa_de_trabajo_1.png"
               alt="Logo de vinilos"
               width="100"
             />
-          </a>
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarVinilos"
-            aria-controls="navbarVinilos"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVinilos" aria-controls="navbarVinilos" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
-          <section class="flex-row-reverse">
-            <div class="collapse navbar-collapse" id="navbarVinilos">
-              <ul class="navbar-nav me-auto mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    href="/admin.html"
-                    aria-current="page"
-                    >Administración</a
-                  >
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="/pages/sobrenosotros.html"
-                    >Nosotros</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/pages/contacto.html">Contacto</a>
-                </li>
-              </ul>
-            </div>
-          </section>
+          <div class="collapse navbar-collapse" id="navbarVinilos">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item ms-3">
+                <a class="nav-link "  href="/index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/sobrenosotros.html">¿Quienes somos?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/admin.html">Administracion</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/contacto.html">Contacto</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
-    <main class="container">
+    <main class="container bg-light">
       <section>
         <h1 class="display-3 mt-5 text-center">Administrar Productos</h1>
         <hr />
@@ -82,6 +64,7 @@
               class="form-control"
               id="codigo"
               placeholder="Click aqui para generar codigo del producto"
+              required
             />
           </div>
           <div class="mb-3">
@@ -91,6 +74,8 @@
               class="form-control"
               id="producto"
               placeholder="ingrese un producto"
+              required
+              minlength="1"
             />
             <div class="invalid-feedback">
               debe agregar al menos un caracter
@@ -102,6 +87,7 @@
               id="descripcion"
               rows="3"
               class="form-control"
+              required
               minlength="1"
               maxlength="300"
               placeholder="agrege la descripcion de su producto"
@@ -117,6 +103,7 @@
               class="form-control"
               id="url"
               placeholder="URL"
+              required
             />
             <div class="invalid-feedback">debe agregar una URL valida</div>
           </div>
@@ -127,6 +114,8 @@
               class="form-control"
               id="precio"
               placeholder="ingrese precio"
+              required
+              minlength="1"
             />
             <div class="invalid-feedback">
               debe agregar al menos un caracter numerico

@@ -2,119 +2,95 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!--aqui agrego las etiquetas meta-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pagina de vinilos" />
+    <meta name="keywords" content="vinilos, discos, bandas, musica, amigos" />
+    <meta
+      name="author"
+      content=" Luciana Medina,Ignacio Vargas,Ezequiel Nicolas Garcia, Pablo Romero Abadie, Axel Campo"
+    />
     <title>Nuestro Contacto</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/estlo.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <nav class=" bg-dark navbar-dark navbar navbar-expand-lg  navfijo container-fluid">  <div class="container">
-        <a class="navbar-brand" href="/index.html">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="display-2 text-white" href="/index.html">
           <img
             src="/img/vinilo_[Recuperado]_Mesa_de_trabajo_1.png"
             alt="Logo de vinilos"
             width="100"
           />
-        </a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarVinilos"
-          aria-controls="navbarVinilos"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVinilos" aria-controls="navbarVinilos" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <section class="flex-row-reverse">
-          <div class="collapse navbar-collapse" id="navbarVinilos">
-            <ul class="navbar-nav me-auto mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link"
-                  href="/index.html">
-                  Inicio
-                  </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">
-                Administración
-              </a>
-              </li>
-
-              <li class="nav-item ">
-                <a class="nav-link " 
-                
-                href="/pages/sobrenosotros.html">
-                Nosotros
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/pages/contacto.html">
-                Contacto
-                </a>
-              </li>
-              
-            </ul>
-          </div>
-          </section>
+        <div class="collapse navbar-collapse" id="navbarVinilos">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item ms-3">
+              <a class="nav-link "  href="/index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="/pages/sobrenosotros.html">¿Quienes somos?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin.html">Administracion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/pages/contacto.html">Contacto</a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
   </header>
-  <main class="container my-2">
-
-    <section class="row container-fluid">
-      <h1 class="text-center my-5">Contáctanos!</h1>
-      <hr>
-      <div class="form">
-        <p>Somos Vintage, una página orientada a la venta de Vinilos.  Acá encontrarás los mejores vinilos del mercado, ubicado en 
-          la localidad de Yerba Buena, Tucumán. Si quieres saber más acerca del producto o si tienes alguna duda sobe nuestra empresa,
-
-          <b><span></span>déjanos un mensaje y en breve te respondemos.</span></b>
-        </p>
-        <a href="#"><i class="fa fa-phone"></i> +54 9 381 574-5020</a>
-        <a href="#"><i class="fa fa-envelope"></i> info@somosvinilos.com</a>
-        <a href="#"><i class="fa fa-map-marked"></i> Tucumán, Argentina</a>
-      </div>
-      <h4 class="p-2">Encúentranos</h4>
-      <div class="ol-md-12 col-lg-6">
-        <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.6770413384893!2d-65.26837618511902!3d-26.81841018316831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225cdc4181a953%3A0x1f3b3328af0514a7!2sAv.%20Aconquija%20100%2C%20Yerba%20Buena%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1630435347348!5m2!1ses-419!2sar"
-        class="container"
-        height="300"
-        style="border: 4"
-        allowfullscreen=""
-        loading="lazy"
-        ></iframe>
-      </div>
-      <div class="col-md-12 col-lg-6 " class="formulario">
-        <form id="formContacto" >
-          <div class="mb-3">
-            <label for="campoNombre" class="form-label">Nombre y apellido</label>
-            <input type="text" class="form-control" id="campoNombre" placeholder="Ingrese Nombre y Apellido">
-          </div>
-          <div class="mb-3">
-            <label for="campoEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="campoEmail" placeholder="jp@mail.com">
-          </div>
-          <div class="mb-3">
-            <label for="campoConsulta" class="form-label">Tu consulta</label>
-            <textarea class="form-control" id="campoConsulta" rows="3" placeholder="¿En qué podemos ayudarte?"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary boton">Enviar Consulta</button>
+  <main class="container bg-light">
+    <section class="justify-content-center  my-5">
+      <p class="lead mt-5" >Somos Vintage, una página orientada a la venta de Vinilos.  Acá encontrarás los mejores vinilos del mercado, ubicado en 
+        la localidad de Yerba Buena, Tucumán. Si quieres saber más acerca del producto o si tienes alguna duda sobe nuestra empresa,
+        
+        <b><span></span>déjanos un mensaje y en breve te respondemos.</span></b>
+      <hr />
+      <article class="row reverse-query my-5">
+        <p>Podes encontrarnos en Gral Paz 576.</p>
+        <div class="col-sm-12 col-md-6 mt-3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14240.408879082126!2d-65.2072018!3d-26.8367009!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1ses-419!2sar!4v1639534261736!5m2!1ses-419!2sar"
+            class="w-100"
+            height="450"
+            style="border: 4"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
         </div>
-      </form>
+        <div class="col-sm-12 col-md-6 mt-3">
+          <form id="formContacto" >
+            <div class="mb-3">
+              <label for="campoNombre" class="form-label">Nombre y apellido</label>
+              <input type="text" class="form-control" id="campoNombre" placeholder="Ingrese Nombre y Apellido"
+              required>
+            </div>
+            <div class="mb-3">
+              <label for="campoEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="campoEmail" placeholder="jp@mail.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="campoConsulta" class="form-label">Tu consulta</label>
+              <textarea required class="form-control" id="campoConsulta" rows="3" placeholder="¿En qué podemos ayudarte?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary boton">Enviar Consulta</button>
+          </form>
+        </div>
+      </article>
     </section>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/contacto.js" type="module"></script>
   </main>
-  <footer class="bg-dark text-light py-5 padding-footer">
+  <footer class="bg-dark text-light py-5 ">
     <article class="row w-100 article-margin">
       <div class="col-sm-12 col-md-4 text-center">
         <p class="fw-bold">¡Gracias por elegirnos!</p>
@@ -129,7 +105,7 @@
       <div class="col-sm-12 col-md-4 text-center">
         <p class="fw-bold">Seguinos en nuestras redes:</p>
         <a href="/pages/error.html">
-        <i class="fab fa-2x p-1 fa-facebook-square link-secondary "></i>
+        <i class="fab fa-2x p-1 fa-facebook-square link-secondary"></i>
         </a>
         <a href="/pages/error.html">
         <i class="fab fa-2x p-1 fa-twitter-square link-secondary"></i>
@@ -144,5 +120,8 @@
       <p>&copy; Todos los derechos de reservados</p>
     </article>
   </footer>
-  </body>
+
+  <script src="/js/bootstrap.min.js" ></script>
+  <script src="/js/contacto.js" type="module" ></script>
+</body>
   </html>
