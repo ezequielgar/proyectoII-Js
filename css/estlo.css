@@ -1,0 +1,21 @@
+.form p {
+    padding-top: 20px;
+}
+
+.form a{
+    font-size: 17px;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 15px;
+    color: rgb(0, 47, 255);
+    font-weight: 700;
+}
+
+
+@media all and(max-width: 780px){
+    .formulario {
+        padding: 10px 10px;
+        margin: 10px 10px;
+    }
+}
