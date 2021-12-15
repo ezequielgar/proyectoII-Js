@@ -80,3 +80,4 @@ export function ValidarGeneralConsulta(campoNombre,campoEmail, campoConsulta){
         return false;
     }
  }
+

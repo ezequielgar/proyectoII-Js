@@ -13,6 +13,8 @@ let listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || []
 let productoExistente = false; //si producto existente es igual a false quiero crear un nuevo producto, caso contrario quiero modificar
 let botonNuevo = document.querySelector("#botonNuevo");
 
+
+
 campoCodigo.addEventListener("click", function(){codigoUnico(campoCodigo)});
 campoCodigo.addEventListener("blur", function(){campoRequerido(campoCodigo)});
 campoProducto.addEventListener("blur", function(){campoRequerido(campoProducto)});
@@ -21,6 +23,9 @@ campoURL.addEventListener("blur", ()=>{ValidarURL(campoURL)});
 campoPrecio.addEventListener("blur", ()=>{ValidarNumeros(campoPrecio)});
 formularioProductos.addEventListener("submit", guardarProducto);
 botonNuevo.addEventListener("click",limpiarFormulario);
+
+
+
 
 
 //llamar a la funcion carga inicial.
